@@ -93,3 +93,60 @@ def all_pairs(arr):
 * Prefer algorithms with **O(log n)**, **O(n)**, or **O(n log n)** when possible.
 
 ---
+
+
+Let’s simplify the idea **step by step**, like you're explaining it to your younger self 👇
+
+---
+
+### 🧠 First, understand this:
+
+* **Time Complexity** → how *long* your code takes to run
+* **Memory Usage** → how much *space* (RAM) your code uses
+
+Now here’s a super simple story to understand how both are connected 👇
+
+---
+
+### 📖 **Story: You and the Exam Hall**
+
+You are solving math problems in an exam hall.
+
+---
+
+#### 🔴 **Slow Student (O(n²))**
+
+* You solve problems one by one, but for every question…
+
+  * You write long steps
+  * You draw lots of diagrams
+  * You keep using new pages for rough work
+* 🕒 Takes a lot of time
+* 🧠 Fills up your memory (you use many answer sheets)
+
+➡️ Because you're slow (bad **time complexity**), you use more **memory** (pages/space).
+
+---
+
+#### 🟢 **Smart Student (O(n))**
+
+* You know tricks and shortcuts
+* You do calculations quickly in your head
+* You don’t need extra pages for rough work
+* 🕒 Takes less time
+* 🧠 Uses less memory
+
+➡️ Since you solve faster (good **time complexity**), you don’t need much **memory**.
+
+---
+
+### ✅ Simple Conclusion:
+
+> **The faster your algorithm is, the less extra memory it usually needs.**
+
+* Good time → often good memory
+* Bad time → usually wastes memory too
+
+---
+
+Let me know if you want this in `.md` format or want to add a real code example too!
