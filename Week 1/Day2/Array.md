@@ -161,6 +161,7 @@ int main() {
     free(arr);  // deallocate memory
     return 0;
 }
+````
 
 ---
 
@@ -168,30 +169,30 @@ int main() {
 
 These are some of the most commonly asked and important array problems for coding interviews and DSA prep:
 
----
-
-1. **Find the Maximum Subarray Sum**  
+1. **Find the Maximum Subarray Sum**
    → Use **Kadane’s Algorithm**
 
-2. **Move All Zeroes to the End**  
+2. **Move All Zeroes to the End**
    → Maintain relative order of non-zero elements
 
-3. **Find the Duplicate in an Array**  
+3. **Find the Duplicate in an Array**
    → Use frequency counting, set, or Floyd’s cycle detection (for 1 duplicate)
 
-4. **Find the Missing Number from 1 to n**  
+4. **Find the Missing Number from 1 to n**
    → Use sum formula or XOR approach
 
-5. **Rotate Array by k Positions**  
+5. **Rotate Array by k Positions**
    → Use reverse logic or extra space method
 
-6. **Longest Subarray with Given Sum**  
+6. **Longest Subarray with Given Sum**
    → Use hashing (prefix sum + hashmap)
 
-7. **Merge Two Sorted Arrays**  
+7. **Merge Two Sorted Arrays**
    → Merge like in merge sort or use two pointers
 
-8. **Find Leaders in an Array**  
+8. **Find Leaders in an Array**
    → Traverse from right and track max
+
+````
 
 ---
