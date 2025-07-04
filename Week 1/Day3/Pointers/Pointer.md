@@ -5,7 +5,6 @@
 
 ---
 
-Got it! Let’s improve that pointer analogy with a **clearer and more relatable story**. Here's a new version:
 
 ---
 
