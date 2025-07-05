@@ -1,0 +1,9 @@
+gets();//read the data from user and it is unformatted fun
+puts();//print the string on cosole and it is unformatted fun
+strlen();//this fun will find length of str
+strlwr();//this will  convert string into lower case from upper case
+strupr()://this will convert string from lower case to upper case
+strrev():This will find reverse of a string
+strcmp():It will compare the string 
+stricmp():It will compare strings by  ignoring case
+strchr():This fun is used to check char is available in string or n
