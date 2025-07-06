@@ -16,6 +16,5 @@ void main() {
     scanf("%d",&ptr->cost);
     printf("Cooling or NO cooling: ");
     scanf("%s",ptr->Type);
-    
     printf("%s,%d,%s",ptr->Name,ptr->cost,ptr->Type);
 }
