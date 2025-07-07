@@ -1,18 +1,5 @@
-# Complete Guide to Singly Linked Lists - A to Z
+# Singly Linked Lists
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Basic Structure](#basic-structure)
-3. [Memory Representation](#memory-representation)
-4. [Node Implementation](#node-implementation)
-5. [Basic Operations](#basic-operations)
-6. [Complete Implementation](#complete-implementation)
-7. [Advanced Operations](#advanced-operations)
-8. [Time and Space Complexity](#time-and-space-complexity)
-9. [Advantages and Disadvantages](#advantages-and-disadvantages)
-10. [Common Problems and Solutions](#common-problems-and-solutions)
-11. [Applications](#applications)
-12. [Best Practices](#best-practices)
 
 ---
 
