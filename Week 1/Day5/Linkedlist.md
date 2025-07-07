@@ -79,19 +79,6 @@ class Node:
         return str(self.data)
 ```
 
-### C++ Implementation
-```cpp
-struct Node {
-    int data;
-    Node* next;
-    
-    Node(int val) {
-        data = val;
-        next = nullptr;
-    }
-};
-```
-
 ### Java Implementation
 ```java
 class Node {
