@@ -6,9 +6,11 @@ struct node{
 }*nn,*head,*temp,*tail;
 void insert()
 {
-    int val,i;
-    
-    for(i=1;i<=4;i++)
+    int val,i,n;
+    printf("Enter size: ");
+    scanf("%d",&n);
+    printf("Enter Node data: ");
+    for(i=1;i<=n;i++)
     {
         nn=(struct node*)malloc(sizeof(struct node));
         scanf("%d",&val);
@@ -30,6 +32,21 @@ void insert()
     }
     
 }
+void addbig()
+{
+    int val;
+    nn=(struct node*)malloc(sizeof(struct node));
+    printf("Add node at beig: ");
+    scanf("%d",&val);
+    nn->data=val;
+    nn->next=NULL;
+    while(head==NULL)
+    {
+        head=nn;
+    }
+    nn->next=head;
+    head=nn;
+}
 
 void display()
 {
@@ -41,8 +58,12 @@ void display()
     }
 }
 
+
+
 void main()
 {
     insert();
+    display();
+    addbig();
     display();
 }

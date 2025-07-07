@@ -55,6 +55,8 @@ void rev()
     head=prev;
 }
 
+
+
 void main()
 {
     insert();

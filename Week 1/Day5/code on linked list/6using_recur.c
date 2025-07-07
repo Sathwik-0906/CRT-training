@@ -110,6 +110,7 @@ void main()
     // addbig();
     // addend();
     // addpos();
+    // recursion code is here to print node data 
     revda(head);
     // display();
 }
