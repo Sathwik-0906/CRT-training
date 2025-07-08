@@ -79,19 +79,6 @@ class Node:
         return str(self.data)
 ```
 
-### C++ Implementation
-```cpp
-struct Node {
-    int data;
-    Node* next;
-    
-    Node(int val) {
-        data = val;
-        next = nullptr;
-    }
-};
-```
-
 ### Java Implementation
 ```java
 class Node {
@@ -116,13 +103,6 @@ class Node {
   2. Set new node's next to current head
   3. Update head to point to new node
 
-```python
-def insert_at_beginning(self, data):
-    new_node = Node(data)
-    new_node.next = self.head
-    self.head = new_node
-```
-
 **Visual:**
 ```
 Before: Head → [20|•] → [30|NULL]
@@ -136,44 +116,13 @@ After:  Head → [10|•] → [20|•] → [30|NULL]
   2. If list is empty, make it head
   3. Otherwise, traverse to last node
   4. Set last node's next to new node
-
-```python
-def insert_at_end(self, data):
-    new_node = Node(data)
-    if not self.head:
-        self.head = new_node
-        return
-    
-    current = self.head
-    while current.next:
-        current = current.next
-    current.next = new_node
-```
-
+  
 #### Insert at Position
 - **Time Complexity**: O(n)
 - **Steps**:
   1. Handle edge cases (position 0, invalid position)
   2. Traverse to position-1
   3. Insert new node between current and current.next
-
-```python
-def insert_at_position(self, data, position):
-    if position == 0:
-        self.insert_at_beginning(data)
-        return
-    
-    new_node = Node(data)
-    current = self.head
-    
-    for i in range(position - 1):
-        if current is None:
-            raise IndexError("Position out of bounds")
-        current = current.next
-    
-    new_node.next = current.next
-    current.next = new_node
-```
 
 ### 2. Deletion Operations
 
@@ -184,16 +133,6 @@ def insert_at_position(self, data, position):
   2. Update head to head.next
   3. Original head gets garbage collected
 
-```python
-def delete_at_beginning(self):
-    if not self.head:
-        return None
-    
-    deleted_data = self.head.data
-    self.head = self.head.next
-    return deleted_data
-```
-
 #### Delete at End
 - **Time Complexity**: O(n)
 - **Steps**:
@@ -201,50 +140,12 @@ def delete_at_beginning(self):
   2. Traverse to second-last node
   3. Set its next to None
 
-```python
-def delete_at_end(self):
-    if not self.head:
-        return None
-    
-    if not self.head.next:
-        deleted_data = self.head.data
-        self.head = None
-        return deleted_data
-    
-    current = self.head
-    while current.next.next:
-        current = current.next
-    
-    deleted_data = current.next.data
-    current.next = None
-    return deleted_data
-```
-
 #### Delete by Value
 - **Time Complexity**: O(n)
 - **Steps**:
   1. Handle deletion of head node
   2. Traverse to find node before target
   3. Update links to skip target node
-
-```python
-def delete_by_value(self, value):
-    if not self.head:
-        return False
-    
-    if self.head.data == value:
-        self.head = self.head.next
-        return True
-    
-    current = self.head
-    while current.next:
-        if current.next.data == value:
-            current.next = current.next.next
-            return True
-        current = current.next
-    
-    return False
-```
 
 ### 3. Search Operations
 
@@ -254,187 +155,6 @@ def delete_by_value(self, value):
   1. Start from head
   2. Compare each node's data
   3. Return position if found, -1 if not found
-
-```python
-def search(self, value):
-    current = self.head
-    position = 0
-    
-    while current:
-        if current.data == value:
-            return position
-        current = current.next
-        position += 1
-    
-    return -1
-```
-
-### 4. Traversal Operations
-
-#### Display/Print List
-```python
-def display(self):
-    if not self.head:
-        print("List is empty")
-        return
-    
-    current = self.head
-    while current:
-        print(current.data, end=" -> " if current.next else " -> NULL\n")
-        current = current.next
-```
-
-#### Get All Elements
-```python
-def to_list(self):
-    result = []
-    current = self.head
-    while current:
-        result.append(current.data)
-        current = current.next
-    return result
-```
-
-## Complete Implementation
-
-```python
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-        self.size = 0
-    
-    def is_empty(self):
-        return self.head is None
-    
-    def get_size(self):
-        return self.size
-    
-    def insert_at_beginning(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-        self.size += 1
-    
-    def insert_at_end(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
-        self.size += 1
-    
-    def insert_at_position(self, data, position):
-        if position < 0 or position > self.size:
-            raise IndexError("Position out of bounds")
-        
-        if position == 0:
-            self.insert_at_beginning(data)
-            return
-        
-        new_node = Node(data)
-        current = self.head
-        
-        for i in range(position - 1):
-            current = current.next
-        
-        new_node.next = current.next
-        current.next = new_node
-        self.size += 1
-    
-    def delete_at_beginning(self):
-        if not self.head:
-            raise IndexError("List is empty")
-        
-        deleted_data = self.head.data
-        self.head = self.head.next
-        self.size -= 1
-        return deleted_data
-    
-    def delete_at_end(self):
-        if not self.head:
-            raise IndexError("List is empty")
-        
-        if not self.head.next:
-            deleted_data = self.head.data
-            self.head = None
-            self.size -= 1
-            return deleted_data
-        
-        current = self.head
-        while current.next.next:
-            current = current.next
-        
-        deleted_data = current.next.data
-        current.next = None
-        self.size -= 1
-        return deleted_data
-    
-    def delete_by_value(self, value):
-        if not self.head:
-            return False
-        
-        if self.head.data == value:
-            self.head = self.head.next
-            self.size -= 1
-            return True
-        
-        current = self.head
-        while current.next:
-            if current.next.data == value:
-                current.next = current.next.next
-                self.size -= 1
-                return True
-            current = current.next
-        
-        return False
-    
-    def search(self, value):
-        current = self.head
-        position = 0
-        
-        while current:
-            if current.data == value:
-                return position
-            current = current.next
-            position += 1
-        
-        return -1
-    
-    def get_at_position(self, position):
-        if position < 0 or position >= self.size:
-            raise IndexError("Position out of bounds")
-        
-        current = self.head
-        for i in range(position):
-            current = current.next
-        
-        return current.data
-    
-    def display(self):
-        if not self.head:
-            print("List is empty")
-            return
-        
-        current = self.head
-        while current:
-            print(current.data, end=" -> " if current.next else " -> NULL\n")
-            current = current.next
-    
-    def to_list(self):
-        result = []
-        current = self.head
-        while current:
-            result.append(current.data)
-            current = current.next
-        return result
-    
-    def clear(self):
-        self.head = None
-        self.size = 0
-```
 
 ## Advanced Operations
 
