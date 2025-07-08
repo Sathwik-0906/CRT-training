@@ -49,7 +49,6 @@ void display()
     printf("\n");
 }
 
-
 void main()
 {
     insert();
