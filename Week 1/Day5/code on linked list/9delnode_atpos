@@ -32,16 +32,24 @@ void insert()
     }
     
 }
-
+void delatbeg()
+{
+    head=head->next;
+}
 void del_node_at_pos(int pos)
 {
+    if (pos==1)
+    {
+        delatbeg();
+    }
+    else{
     temp=head;
     for(int i=1;i<pos-1;i++)
     {
         temp=temp->next;
     }
     temp->next=temp->next->next;
-    
+    }
 }
 
 void display()
