@@ -359,80 +359,8 @@ public:
 
 ## 🚀 Advanced Topics
 
-### 1. Thread-Safe Stack
-```cpp
-template<typename T>
-class ThreadSafeStack {
-private:
-    mutable mutex mtx;
-    stack<T> data;
-    
-public:
-    void push(T item) {
-        lock_guard<mutex> lock(mtx);
-        data.push(item);
-    }
-    
-    bool tryPop(T& item) {
-        lock_guard<mutex> lock(mtx);
-        if (data.empty()) return false;
-        item = data.top();
-        data.pop();
-        return true;
-    }
-    
-    shared_ptr<T> tryPop() {
-        lock_guard<mutex> lock(mtx);
-        if (data.empty()) return shared_ptr<T>();
-        shared_ptr<T> res = make_shared<T>(data.top());
-        data.pop();
-        return res;
-    }
-};
-```
 
-### 2. Min/Max Stack
-```cpp
-class MinMaxStack {
-private:
-    stack<int> mainStack;
-    stack<int> minStack;
-    stack<int> maxStack;
-    
-public:
-    void push(int x) {
-        mainStack.push(x);
-        
-        if (minStack.empty() || x <= minStack.top()) {
-            minStack.push(x);
-        }
-        
-        if (maxStack.empty() || x >= maxStack.top()) {
-            maxStack.push(x);
-        }
-    }
-    
-    void pop() {
-        if (mainStack.empty()) return;
-        
-        int top = mainStack.top();
-        mainStack.pop();
-        
-        if (top == minStack.top()) {
-            minStack.pop();
-        }
-        
-        if (top == maxStack.top()) {
-            maxStack.pop();
-        }
-    }
-    
-    int getMin() { return minStack.top(); }
-    int getMax() { return maxStack.top(); }
-};
-```
-
-### 3. Stack with Queue Operations
+### 1. Stack with Queue Operations
 ```cpp
 class StackWithQueue {
 private:
@@ -555,33 +483,7 @@ int goodPop() {
 }
 ```
 
-### 3. Exception Safety
-```cpp
-class ExceptionSafeStack {
-private:
-    vector<int> data;
-    
-public:
-    void push(int x) {
-        try {
-            data.push_back(x);  // May throw bad_alloc
-        } catch (...) {
-            // Stack remains in valid state
-            throw;
-        }
-    }
-    
-    int pop() noexcept {  // No-throw guarantee
-        if (data.empty()) {
-            terminate();  // Or return optional<int>
-        }
-        
-        int value = data.back();
-        data.pop_back();  // No-throw operation
-        return value;
-    }
-};
-```
+`
 
 ---
 
