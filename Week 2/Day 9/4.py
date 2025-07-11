@@ -1,6 +1,5 @@
 n=['aabaaba','bbaabb','abbab','aaabbb','abbbbabbb']
 c=0
-
 for i in n:
     f=1
     if len(i)%2==0:

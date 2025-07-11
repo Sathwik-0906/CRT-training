@@ -21,11 +21,17 @@ def divs(l):
         right=divs(l[m:])
     return merged(left,right)
 
+def main():
+    l=[60,40,30,50,10,20]
+    print("before sort: ")
+    print(l)
+    res=divs(l)
+    print(res)
 
-l=[60,40,30,50,10,20]
-print(l)
-res=divs(l)
-print(res)
+if __name__ == "__main__":
+    main()
+    
+
     
 
     

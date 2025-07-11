@@ -15,6 +15,7 @@ void insert(int a[],int n)
         a[j+1]=temp;
     }
 }
+
 void main(){
     int a[] = {5,3,8,6,7,2};
     int size, i;
@@ -22,9 +23,10 @@ void main(){
     printf("Unsorted array: ");
     for(i=0;i<size;i++){
         printf("%d ", a[i]);
-        bs(a, size);
+        insert(a, size);
         printf("\nSorted array: ");
         for(i=0;i<size;i++){
             printf("%d ", a[i]);
         }
     }
+}
