@@ -1,3 +1,4 @@
+from collections import deque
 class Node:
     def __init__(self,data):
         self.data=data
@@ -49,6 +50,20 @@ def curr(root,l):
   else:
     curr(root.left,l-1)
     curr(root.right,l-1)
+
+def level_q(root):
+   if root is None:
+      return 0
+   q=deque([root])
+   while(q):
+      node=q.popleft()
+      print(node.data,end=" ")
+      if node.left:
+         q.append(node.left)
+      if node.left:
+         q.append(node.right)   
+
+
 n1=Node(27)
 n1.insert(14)
 n1.insert(35)
@@ -63,4 +78,5 @@ print("\nheight is: ",h)
 print("Level order: ")
 lv=level(n1)
 
-
+print("\n")
+level_q(n1)

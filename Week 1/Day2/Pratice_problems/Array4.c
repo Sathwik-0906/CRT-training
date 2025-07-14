@@ -35,4 +35,21 @@ else:
     print(sum) //here the time complexity is o(n^2)
 
 
+def leader_optimized(arr, n):
+    max_from_right = arr[n - 1]
+    s = max_from_right  # Last element is always a leader
+
+    for i in range(n - 2, -1, -1):  # Traverse from second last to first
+        if arr[i] >= max_from_right:
+            s += arr[i]
+            max_from_right = arr[i]
+    return s
+
+# Test
+n = 7
+arr = [52, 66, 64, 36, 45, 24, 32]
+print(leader_optimized(arr, n))
+
+
+
     

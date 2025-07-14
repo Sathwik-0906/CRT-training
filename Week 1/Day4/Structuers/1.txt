@@ -1,0 +1,33 @@
+Structures
+structre pointers
+Diff b/w static and Dynamic memory allocation
+DMA functions
+--------------------------------------
+Structures:
+---------------------
+Data types
+1)Fundamental DT:int,float,str
+2)Derived DT
+student --->name,rno,marks
+name-->char
+rno--->int
+marks-->int/float
+Above 2 DT are not satisfiy the user requirment
+Variable--->store--->Different type of data--->It cant be done by fundamental
+and derived data type
+so we are going with user defined DT
+Structures-size is sum of size
+syntax:
+-----------------
+struct stucture_name
+{
+attribute1;
+attribute2;
+-----
+-----
+};//To declare sturcture variable
+void main()
+{
+---
+---
+}

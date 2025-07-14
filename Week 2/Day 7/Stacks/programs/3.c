@@ -24,5 +24,16 @@ void main()
     for(i=0;i<=p1;i++)
     printf("%d ",a[i]);
 
-    
+
 }
+
+
+
+// l=list(map(int,input().split()))
+// stack=[]
+// for p in range(len(l)//2):
+//     stack.append(l.pop())
+// l.pop()
+// while(stack):
+//     l.append(stack.pop())
+// print(*l)
